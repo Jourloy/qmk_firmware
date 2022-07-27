@@ -14,12 +14,10 @@
 
 // OLED
 #define OLED_FONT_H "keyboards/crkbd/lib/glcdfont.c"
-#define SSD1306OLED
 
 // RGB
 #ifdef RGBLIGHT_ENABLE
 #   undef RGBLED_NUM
-#   define RGBLIGHT_ANIMATIONS
 #   define RGBLED_NUM 27
 #   define RGBLIGHT_SPLIT
 #   define RGBLIGHT_LIMIT_VAL 155
