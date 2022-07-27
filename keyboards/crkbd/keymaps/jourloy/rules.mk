@@ -1,7 +1,9 @@
-MOUSEKEY_ENABLE = no
-EXTRAKEY_ENABLE = yes
-AUDIO_ENABLE = yes
-RGBLIGHT_ENABLE = yes
-OLED_ENABLE = yes
-OLED_DRIVER = SSD1306
+OLED_ENABLE = no
+# OLED_DRIVER = SSD1306
 LTO_ENABLE = yes
+
+##########################################################################################
+# Tap dance doc                                                                          #
+# https://github.com/samhocevar-forks/qmk-firmware/blob/master/docs/feature_tap_dance.md #
+##########################################################################################
+TAP_DANCE_ENABLE=yes
