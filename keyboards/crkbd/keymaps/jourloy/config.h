@@ -9,17 +9,20 @@
 // Tap dance
 #define TAPPING_TERM 185
 
-// WPN
-#define SPLIT_WPM_ENABLE
-
 // OLED
-#define OLED_FONT_H "keyboards/crkbd/lib/glcdfont.c"
+#ifdef OLED_ENABLE
+#    define OLED_FONT_H "keyboards/crkbd/lib/glcdfont.c"
+#    define SPLIT_OLED_ENABLE
+#endif
 
 // RGB
 #ifdef RGBLIGHT_ENABLE
 #   undef RGBLED_NUM
-#   define RGBLED_NUM 27
+#   undef RGBLED_SPLIT
+#   define RGBLED_NUM 54
+#   define RGBLED_SPLIT { 27, 27 }
 #   define RGBLIGHT_SPLIT
+#   define RGBLIGHT_LAYERS
 #   define RGBLIGHT_LIMIT_VAL 155
 #   define RGBLIGHT_HUE_STEP 10
 #   define RGBLIGHT_SAT_STEP 17

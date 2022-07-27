@@ -6,7 +6,6 @@ SLEEP_LED_ENABLE   = yes
 # OLED
 OLED_ENABLE        = yes
 OLED_DRIVER        = SSD1306
-OLED_DRIVER_ENABLE = yes
 
 # Console for debugging
 CONSOLE_ENABLE     = no

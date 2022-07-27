@@ -2,7 +2,7 @@
 
 **Master hand:** left
 
-**Size:** 21722/28672 (75%, 6950 bytes free)
+**Size:** 25946/28672 (90%, 2726 bytes free)
 
 ## How to flash
 1. Compile `qmk compile -kb crkbd -km jourloy`
@@ -14,6 +14,14 @@
 - RAISE - symbols for programming
 - ADJUST - system keys
 
-## TODO
-- [ ] OLED
-- [ ] RGB on each layer
+## RGB
+RGB change color on each layer
+- QWERTY - RED
+- LOWER - CYAN
+- RAISE - PURPLE
+- ADJUST - GREEN
+
+## OLED
+Left oled contain information about current layer and WPM
+
+Right oled contain user's text
