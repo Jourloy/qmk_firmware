@@ -1,4 +1,5 @@
 #include QMK_KEYBOARD_H
+#include macros.h
 
 // Layers types
 enum layers {
@@ -49,7 +50,7 @@ qk_tap_dance_action_t tap_dance_actions[] = {
 // ☼x brightness off
 
 // System
-// ☾  sleep
+// ⥀  change language
 
 // Keys
 // ⇨  right
@@ -81,7 +82,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * +-------+-------+-------+-------+-------+-------+ +-------+-------+-------+-------+-------+-------+
  * |  ♫x   |   Z   |   X   |   C   |   D   |   V   | |   K   |   H   |   ,   |   .   |   /   |       |
  * +-------+-------+-------+-------+-------+-------+ +-------+-------+-------+-------+-------+-------+
- *                         |  1/⇥  |  2/␣  |  3/↩  | |  3/↩  |  2/⌫  |  1/⎋  |
+ *                         |   ⇥   |   ␣   |   ↩   | |  3/↩  |  2/⌫  |  1/⎋  |
  *                         +-------+-------+-------+ +-------+-------+-------+
  */
   [_QWERTY] = LAYOUT_split_3x6_3(
@@ -129,19 +130,19 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 /* ADJUST
  * +-------+-------+-------+-------+-------+-------+ +-------+-------+-------+-------+-------+-------+
- * |  ☼↑   |       |       |       |       |       | |       |       |       |       |       |       |
+ * |  ☼↑   |       |       |   ⇧   |       |       | |       |       |       |       |       |       |
  * +-------+-------+-------+-------+-------+-------+ +-------+-------+-------+-------+-------+-------+
- * |       |   ⇦   |   ⇧   |   ⇩   |   ⇨   |       | |       |   ↞   |   ▶   |   ↠   |       |       |
+ * |       |       |   ⇦   |   ⇩   |   ⇨   |       | |       |   ↞   |   ▶   |   ↠   |       |       |
  * +-------+-------+-------+-------+-------+-------+ +-------+-------+-------+-------+-------+-------+
  * |  ☼↓   |       |       |       |       |       | |       |       |       |       |       |       |
  * +-------+-------+-------+-------+-------+-------+ +-------+-------+-------+-------+-------+-------+
- *                         |       |   ☾   |       | |       |       |       |
+ *                         |       |   ⥀   |       | |       |       |       |
  *                         +-------+-------+-------+ +-------+-------+-------+
  */
   [_ADJUST] = LAYOUT_split_3x6_3(
-     KC_BRMU, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
-     XXXXXXX, KC_LEFT, KC_UP, KC_DOWN, KC_RGHT, XXXXXXX,    XXXXXXX, KC_MPRV, KC_MPLY, KC_MNXT, XXXXXXX, XXXXXXX,
+     KC_BRMU, XXXXXXX, XXXXXXX, KC_UP, XXXXXXX, XXXXXXX,    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+     XXXXXXX, XXXXXXX, KC_LEFT, , KC_DOWN, KC_RGHT, XXXXXXX,    XXXXXXX, KC_MPRV, KC_MPLY, KC_MNXT, XXXXXXX, XXXXXXX,
      KC_BRMD, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
-                                XXXXXXX, KC_SLEP, XXXXXXX,    KC_TRNS, KC_TRNS, KC_TRNS
+                                XXXXXXX, LANG, XXXXXXX,    KC_TRNS, KC_TRNS, KC_TRNS
   )
 };
