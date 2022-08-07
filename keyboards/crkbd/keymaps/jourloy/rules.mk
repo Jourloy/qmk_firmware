@@ -11,7 +11,7 @@ OLED_DRIVER        = SSD1306
 CONSOLE_ENABLE     = no
 
 # Tap dance
-TAP_DANCE_ENABLE   = yes
+TAP_DANCE_ENABLE   = no
 
 # WPM
 WPM_ENABLE         = yes
