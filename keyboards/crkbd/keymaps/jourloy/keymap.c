@@ -13,7 +13,7 @@ enum layers {
 // ⌘  command
 // ⌥  option
 // ⌃  control
-// ⇧/ shift
+// ⇧  shift
 // ⇥  tab
 // ⌫  backspace
 // ⎋  escape
@@ -44,81 +44,76 @@ enum layers {
 // ♫↓ volume down
 // ♫x volume mute
 
-// Layers
-// 1/ layer one
-// 2/ layer two
-// 3/ layer three
-
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 /* QWERTY
  * +-------+-------+-------+-------+-------+-------+ +-------+-------+-------+-------+-------+-------+
- * |  1/   |   Q   |   W   |   F   |   P   |   B   | |   J   |   L   |   U   |   Y   |   '   |   ♫↑  |
+ * |   ⌥   |   Q   |   W   |   F   |   P   |   B   | |   J   |   L   |   U   |   Y   |   '   |       |
  * +-------+-------+-------+-------+-------+-------+ +-------+-------+-------+-------+-------+-------+
- * |   ⇥   |   A   |   R   |   S   |   T   |   G   | |   M   |   N   |   E   |   I   |   O   |   ♫x  |
+ * |   ⌘   |   A   |   R   |   S   |   T   |   G   | |   M   |   N   |   E   |   I   |   O   |   2.  |
  * +-------+-------+-------+-------+-------+-------+ +-------+-------+-------+-------+-------+-------+
- * |   ⌥   |   Z   |   X   |   C   |   D   |   V   | |   K   |   H   |   ,   |   .   |   /   |   ♫↓  |
+ * |   ⌃   |   Z   |   X   |   C   |   D   |   V   | |   K   |   H   |   ,   |   .   |   /   |       |
  * +-------+-------+-------+-------+-------+-------+ +-------+-------+-------+-------+-------+-------+
- *                         |   ⌘   |   ␣   |   ⇧/  | |   ↩   |   ⌫   |   ⌃   |
+ *                         |  ⎋/1  |   ␣   |  ⇥/3  | |  ↩/3  |   ⌫   |   ⇧   |
  *                         +-------+-------+-------+ +-------+-------+-------+
  */
   [_QWERTY] = LAYOUT_split_3x6_3(
-     MO(1),   KC_Q, KC_W, KC_F,    KC_P,     KC_B,           KC_J,   KC_L,      KC_U,     KC_Y,   KC_QUOTE, KC_KB_VOLUME_UP,
-     KC_TAB,  KC_A, KC_R, KC_S,    KC_T,     KC_G,           KC_M,   KC_N,      KC_E,     KC_I,   KC_O,     KC_KB_MUTE,
-     KC_LALT, KC_Z, KC_X, KC_C,    KC_D,     KC_V,           KC_K,   KC_H,      KC_COMMA, KC_DOT, KC_SLSH,  KC_KB_VOLUME_DOWN,
-                          KC_LGUI, KC_SPACE, KC_LSHIFT,      KC_ENT, KC_BSPACE, KC_LCTRL
+     KC_LALT,  KC_Q, KC_W, KC_F,            KC_P,     KC_B,              KC_J,         KC_L,      KC_U,     KC_Y,   KC_QUOTE, XXXXXXX,
+     KC_LGUI,  KC_A, KC_R, KC_S,            KC_T,     KC_G,              KC_M,         KC_N,      KC_E,     KC_I,   KC_O,     TG(2),
+     KC_LCTRL, KC_Z, KC_X, KC_C,            KC_D,     KC_V,              KC_K,         KC_H,      KC_COMMA, KC_DOT, KC_SLSH,  XXXXXXX,
+                           LT(1,KC_ESCAPE), KC_SPACE, LT(3,KC_TAB),      LT(3,KC_ENT), KC_BSPACE, KC_LSHIFT
   ),
 
 /* LOWER
  * +-------+-------+-------+-------+-------+-------+ +-------+-------+-------+-------+-------+-------+
- * |       |   2/  |   3/  |       |       |       | |       |   1   |   2   |   3   |   \   |       |
+ * |       |       |   7   |   8   |   9   |   \   | |       |       |       |       |       |       |
  * +-------+-------+-------+-------+-------+-------+ +-------+-------+-------+-------+-------+-------+
- * |       |       |       |       |       |       | |       |   4   |   5   |   6   |   ;   |       |
+ * |       |       |   4   |   5   |   6   |   ;   | |       |   [   |   ]   |   (   |   )   |       |
  * +-------+-------+-------+-------+-------+-------+ +-------+-------+-------+-------+-------+-------+
- * |       |       |       |       |       |       | |       |   7   |   8   |   9   |   `   |       |
+ * |       |       |   1   |   2   |   3   |   `   | |       |       |   ,   |   .   |   /   |       |
  * +-------+-------+-------+-------+-------+-------+ +-------+-------+-------+-------+-------+-------+
- *                         |       |   ⇧/  |       | |       |   0   |       |
+ *                         |       |   0   |       | |   -   |   =   |   ⇧   |
  *                         +-------+-------+-------+ +-------+-------+-------+
  */
   [_LOWER] = LAYOUT_split_3x6_3(
-     KC_TRNS, MO(2),   MO(3),   XXXXXXX,    XXXXXXX,       XXXXXXX, XXXXXXX, KC_1, KC_2, KC_3, KC_BSLS, XXXXXXX,
-     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,    XXXXXXX,       XXXXXXX, XXXXXXX, KC_4, KC_5, KC_6, KC_SCLN, XXXXXXX,
-     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,    XXXXXXX,       XXXXXXX, XXXXXXX, KC_7, KC_8, KC_9, KC_GRV,  XXXXXXX,
-                       XXXXXXX, KC_LSHIFT,  XXXXXXX,       XXXXXXX, KC_0,    XXXXXXX
+     XXXXXXX, XXXXXXX, KC_7, KC_8,    KC_9, KC_BSLS,      XXXXXXX, XXXXXXX, XXXXXXX,  XXXXXXX,    XXXXXXX,    XXXXXXX,
+     XXXXXXX, XXXXXXX, KC_4, KC_5,    KC_6, KC_SCLN,      XXXXXXX, KC_LBRC, KC_RBRC,  LSFT(KC_9), LSFT(KC_0), XXXXXXX,
+     XXXXXXX, XXXXXXX, KC_1, KC_2,    KC_3, KC_GRV,       XXXXXXX, XXXXXXX, KC_COMMA, KC_DOT,     KC_SLSH,    XXXXXXX,
+                             XXXXXXX, KC_0, XXXXXXX,      KC_MINS, KC_EQL,  KC_LSHIFT
   ),
 
 /* RAISE
  * +-------+-------+-------+-------+-------+-------+ +-------+-------+-------+-------+-------+-------+
- * |       |       |   3/  |       |       |       | |       |       |       |       |       |       |
+ * |   Q   |   W   |   E   |   R   |   T   |   Y   | |   U   |   I   |   O   |   P   |   [   |   ]   |
  * +-------+-------+-------+-------+-------+-------+ +-------+-------+-------+-------+-------+-------+
- * |       |       |       |       |       |       | |       |   [   |   ]   |   (   |   )   |       |
+ * |   A   |   S   |   D   |   F   |   G   |   H   | |   J   |   K   |   L   |   ;   |   '   |   \   |
  * +-------+-------+-------+-------+-------+-------+ +-------+-------+-------+-------+-------+-------+
- * |       |       |       |       |       |       | |       |       |       |       |       |       |
+ * |   Z   |   X   |   C   |   V   |   B   |   N   | |   M   |   ,   |   .   |   /   |       |   0.  |
  * +-------+-------+-------+-------+-------+-------+ +-------+-------+-------+-------+-------+-------+
- *                         |       |   ⇧/  |       | |       |       |       |
+ *                         |  ⎋/1  |   ␣   |  ⇥/3  | |  ↩/3  |   ⌫   |   ⇧   |
  *                         +-------+-------+-------+ +-------+-------+-------+
  */
   [_RAISE] = LAYOUT_split_3x6_3(
-     KC_TRNS, KC_TRNS, MO(3),   XXXXXXX, XXXXXXX,   XXXXXXX,       XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,    XXXXXXX,    XXXXXXX,
-     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,   XXXXXXX,       XXXXXXX, KC_LBRC, KC_RBRC, LSFT(KC_9), LSFT(KC_0), XXXXXXX,
-     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,   XXXXXXX,       XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,    XXXXXXX,    XXXXXXX,
-                                XXXXXXX, KC_LSHIFT, XXXXXXX,       XXXXXXX, XXXXXXX, XXXXXXX
+     KC_Q, KC_W, KC_E, KC_R,            KC_T,     KC_Y,               KC_U,         KC_I,      KC_O,     KC_P,    KC_LBRC,  KC_RBRC,
+     KC_A, KC_S, KC_D, KC_F,            KC_G,     KC_H,               KC_J,         KC_K,      KC_L,     KC_SCLN, KC_QUOTE, KC_BSLS,
+     KC_Z, KC_X, KC_C, KC_V,            KC_B,     KC_N,               KC_M,         KC_COMMA,  KC_DOT,   KC_SLSH, XXXXXXX,  TO(0),
+                       LT(1,KC_ESCAPE), KC_SPACE, LT(3,KC_TAB),       LT(3,KC_ENT), KC_BSPACE, KC_LSHIFT
   ),
 
 /* ADJUST
  * +-------+-------+-------+-------+-------+-------+ +-------+-------+-------+-------+-------+-------+
- * |       |       |       |       |       |       | |       |       |   ⇧   |       |       |   ☼↑  |
+ * |       |       |       |       |       |       | |   ♫↑  |       |   ⇧   |       |       |   ☼↑  |
  * +-------+-------+-------+-------+-------+-------+ +-------+-------+-------+-------+-------+-------+
- * |       |       |       |       |       |       | |       |   ⇦   |   ⇩   |   ⇨   |       |       |
+ * |       |       |       |       |       |       | |   ♫x  |   ⇦   |   ⇩   |   ⇨   |       |       |
  * +-------+-------+-------+-------+-------+-------+ +-------+-------+-------+-------+-------+-------+
- * |       |       |       |       |       |       | |       |       |       |       |       |   ☼↓  |
+ * |       |       |       |       |       |       | |   ♫↓  |       |       |       |       |   ☼↓  |
  * +-------+-------+-------+-------+-------+-------+ +-------+-------+-------+-------+-------+-------+
  *                         |       |       |       | |   ↞   |   ▶   |   ↠   |
  *                         +-------+-------+-------+ +-------+-------+-------+
  */
   [_ADJUST] = LAYOUT_split_3x6_3(
-     KC_TRNS, KC_TRNS, KC_TRNS, XXXXXXX, XXXXXXX, XXXXXXX,      XXXXXXX, XXXXXXX, KC_UP,   XXXXXXX, XXXXXXX, KC_BRMU,
-     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,      XXXXXXX, KC_LEFT, KC_DOWN, KC_RGHT, XXXXXXX, XXXXXXX,
-     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_BRMD,
+     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,      KC_KB_VOLUME_UP, XXXXXXX, KC_UP,   XXXXXXX, XXXXXXX, KC_BRMU,
+     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,      KC_KB_MUTE, KC_LEFT, KC_DOWN, KC_RGHT, XXXXXXX, XXXXXXX,
+     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,      KC_KB_VOLUME_DOWN, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_BRMD,
                                 XXXXXXX, XXXXXXX, XXXXXXX,      KC_MPRV, KC_MPLY, KC_MNXT
   )
 };
@@ -140,10 +135,12 @@ const rgblight_segment_t PROGMEM lower_layer[] = RGBLIGHT_LAYER_SEGMENTS(
 );
 
 const rgblight_segment_t PROGMEM raise_layer[] = RGBLIGHT_LAYER_SEGMENTS(
-    {1, 6, HSV_RED},
-    {6, 21, HSV_YELLOW},
+    {1, 6, HSV_WHITE},
+    {6, 12, HSV_BLUE},
+    {18, 9, HSV_WHITE},
     {27, 6, HSV_RED},
-    {33, 21, HSV_YELLOW}
+    {33, 9, HSV_BLUE},
+    {42, 12, HSV_RED}
 );
 
 const rgblight_segment_t PROGMEM adjust_layer[] = RGBLIGHT_LAYER_SEGMENTS(

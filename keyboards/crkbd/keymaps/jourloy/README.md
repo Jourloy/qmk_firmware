@@ -2,7 +2,7 @@
 
 **Master hand:** left
 
-**Size:** 24786/28672 (86%, 3886 bytes free)
+**Size:** 24796/28672 (86%, 3876 bytes free)
 
 ## How to flash
 1. Compile `qmk compile -kb crkbd -km jourloy`
@@ -10,15 +10,15 @@
 
 ## Layers
 - QWERTY - [miryoku](https://github.com/manna-harbour/miryoku/tree/master/docs/reference) layout
-- LOWER - numbers
-- RAISE - for programming
+- LOWER - numbers and symbols for programming
+- RAISE - QWERTY
 - ADJUST - OS
 
 ## RGB
 RGB change color on each layer
 - QWERTY - AZURE
 - LOWER - PURPLE
-- RAISE - YELLOW
+- RAISE - Russian flag
 - ASJUST - GREEN
 
 ## OLED
